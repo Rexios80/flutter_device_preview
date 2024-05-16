@@ -18,6 +18,8 @@ ScreenshotProcessor screenshotAsFiles(Directory directory) {
         case ImageByteFormat.rawUnmodified:
         case ImageByteFormat.rawRgba:
           return '.bmp';
+        default:
+          throw UnsupportedError('Unsupported format ${screenshot.format}');
       }
     }();
     final file = File(
